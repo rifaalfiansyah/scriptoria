@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lord of The Mysteries - Novel details, synopsis, and reading options on Scriptoria." />
+  <meta name="keywords" content="Lord of The Mysteries, novel, fantasy, Scriptoria, reading" />
+  <title>Lord of The Mysteries - Scriptoria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+  <header>
+    <div class="logo">Scriptoria<span>.</span></div>
+    <div class="menu-icon" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></div>
+  </header>
+  <nav class="nav-menu" aria-hidden="true">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="index.html#recommendations" data-i18n="recommendations">Recommendations</a>
+    <a href="index.html#about" data-i18n="about">About</a>
+    <a href="index.html#contact" data-i18n="contact">Contact</a>
+    <div class="language-selector">
+      <label for="lang-select" class="sr-only">Select Language</label>
+      <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="id">Indonesian</option>
+      </select>
+    </div>
+  </nav>
+  <section class="hero-section">
+    <img
+      src="https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?updatedAt=1748099020818"
+      srcset="https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?tr=w-200 200w,
+              https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?tr=w-400 400w"
+      sizes="(max-width: 600px) 200px, 400px"
+      alt="Lord of The Mysteries cover"
+      loading="lazy"
+    />
+    <div class="hero-text">
+      <h1 data-i18n="title">Lord of The Mysteries</h1>
+      <div class="chapter-info">
+        <div class="chapter" data-i18n="chapter">Chapter 1430</div>
+        <div class="circle finished" aria-label="Finished status"></div>
+        <span data-i18n="finished">Finished</span>
+      </div>
+      <a href="https://indowebnovel.id/novel/lord-of-the-mysteries/chapter-1" class="read-button" id="read-button" target="_blank" rel="noopener noreferrer" data-i18n="read">Read Now</a>
+    </div>
+  </section>
+  <section class="info-section">
+    <h2 data-i18n="synopsis">Synopsis</h2>
+    <p data-i18n="synopsisText">
+      In the waves of steam and machinery, who could shine the light of extraordinariness? In the fogs of history and darkness, who was whispering? Waking up to find himself in the body of Klein Moretti in a world blending mystery, magic, and steampunk, Zhou Mingrui embarks on a journey to uncover the secrets of his transmigration and the hidden truths of a world filled with supernatural forces and ancient conspiracies.
+    </p>
+  </section>
+  <section class="info-section">
+    <h2 data-i18n="author">Author</h2>
+    <p>Cuttlefish That Loves Diving</p>
+  </section>
+  <section class="info-section">
+    <h2 data-i18n="chapters">Chapters</h2>
+    <div class="chapter-list">
+      <label data-i18n="selectChapter">Select Chapter:</label>
+      <div class="chapter-scroll">
+        <ul id="chapter-list" aria-label="List of chapters">
+          <!-- Chapters will be populated by JavaScript -->
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p data-i18n="sources">Sources:</p>
+    <ul>
+      <li>Font: <a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins - Google Fonts</a></li>
+      <li>Icons: <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></li>
+      <li>Image Hosting: <a href="https://imagekit.io/" target="_blank">ImageKit</a></li>
+      <li>Novel: <a href="https://indowebnovel.id/" target="_blank">Indowebnovel</a></li>
+    </ul>
+    <p>© <span id="copyright-year"></span> Scriptoria.</p>
+  </footer>
+  <div class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()"><i class="fas fa-moon"></i></div>
+  <script src="script.js"></script>
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        recommendations: "Recommendations",
+        about: "About",
+        contact: "Contact",
+        title: "Lord of The Mysteries",
+        chapter: "Chapter 1430",
+        read: "Read Now",
+        synopsis: "Synopsis",
+        synopsisText: "In the waves of steam and machinery, who could shine the light of extraordinariness? In the fogs of history and darkness, who was whispering? Waking up to find himself in the body of Klein Moretti in a world blending mystery, magic, and steampunk, Zhou Mingrui embarks on a journey to uncover the secrets of his transmigration and the hidden truths of a world filled with supernatural forces and ancient conspiracies.",
+        author: "Author",
+        sources: "Sources",
+        selectChapter: "Select Chapter:",
+        chapterPrefix: "Chapter",
+        chapters: "Chapters",
+      },
+      id: {
+        home: "Beranda",
+        recommendations: "Rekomendasi",
+        about: "Tentang",
+        contact: "Kontak",
+        title: "Penguasa Misteri",
+        chapter: "Bab 1430",
+        read: "Baca Sekarang",
+        synopsis: "Sinopsis",
+        synopsisText: "Di tengah gelombang uap dan mesin, siapa yang bisa memancarkan cahaya keistimewaan? Dalam kabut sejarah dan kegelapan, siapa yang berbisik? Bangun dalam tubuh Klein Moretti di dunia yang memadukan misteri, sihir, dan steampunk, Zhou Mingrui memulai perjalanan untuk mengungkap rahasia transmigrasinya dan kebenaran tersembunyi dari dunia yang penuh dengan kekuatan supernatural dan konspirasi kuno.",
+        author: "Penulis",
+        sources: "Sumber",
+        selectChapter: "Pilih Bab:",
+        chapterPrefix: "Bab",
+        chapters: "Bab",
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      const chapterList = document.getElementById('chapter-list');
+      const readButton = document.getElementById('read-button');
+      const lang = localStorage.getItem('language') || 'en';
+      const maxChapters = 1430;
+
+      // Populate chapter list
+      for (let i = 1; i <= maxChapters; i++) {
+        const li = document.createElement('li');
+        li.textContent = `${translations[lang].chapterPrefix} ${i}`;
+        li.dataset.chapter = i;
+        li.setAttribute('role', 'button');
+        li.setAttribute('aria-label', `Select ${translations[lang].chapterPrefix} ${i}`);
+        li.addEventListener('click', () => {
+          // Remove selected class from all items
+          chapterList.querySelectorAll('li').forEach(item => item.classList.remove('selected'));
+          // Add selected class to clicked item
+          li.classList.add('selected');
+          // Update Read Now button href
+          readButton.href = `https://indowebnovel.id/novel/lord-of-the-mysteries/chapter-${i}`;
+        });
+        chapterList.appendChild(li);
+      }
+
+      // Set first chapter as selected by default
+      chapterList.querySelector('li').classList.add('selected');
+    });
+  </script>
+</body>
+</html>

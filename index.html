@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Scriptoria: Discover exciting novels and stories with multilingual support." />
+  <meta name="keywords" content="novels, stories, Scriptoria, reading, books" />
+  <title>Scriptoria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+  <header>
+    <div class="logo">Scriptoria<span>.</span></div>
+    <div class="menu-icon" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></div>
+  </header>
+  <nav class="nav-menu" aria-hidden="true">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="index.html#recommendations" data-i18n="recommendations">Recommendations</a>
+    <a href="index.html#about" data-i18n="about">About</a>
+    <a href="index.html#contact" data-i18n="contact">Contact</a>
+    <div class="language-selector">
+      <label for="lang-select" class="sr-only">Select Language</label>
+      <select id="lang-select" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="id">Indonesian</option>
+      </select>
+    </div>
+  </nav>
+  <div class="quotes">
+    <h2 data-i18n="quotes">“When you arise in the morning, think of what a precious privilege it is to be alive – to breathe, to think, to enjoy, to love.”</h2>
+    <i>- Marcus Aurelius</i>
+  </div>
+  <h2 id="recommendations" data-i18n="recommendations">Recommendations</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="lord-of-the-mysteries.html" class="card-link" aria-label="View details for Lord of The Mysteries">
+        <img
+          src="https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?updatedAt=1748099020818"
+          srcset="https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?tr=w-200 200w,
+                  https://ik.imagekit.io/bcqmunish/lordofthemysteries.jpeg?tr=w-400 400w"
+          sizes="(max-width: 600px) 200px, 400px"
+          alt="Lord of The Mysteries cover"
+          loading="lazy"
+        />
+        <div class="card-text">
+          <div class="title" data-i18n="title1">Lord of The Mysteries</div>
+          <div class="chapter-info">
+            <div class="chapter" data-i18n="chapter1">Chapter 1430</div>
+            <div class="circle finished" aria-label="Finished status"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a href="novel2.html" class="card-link" aria-label="View details for The Support Ate it All">
+        <img
+          src="https://ik.imagekit.io/bcqmunish/thesupportateitall.jpeg?updatedAt=1748097366510"
+          srcset="https://ik.imagekit.io/bcqmunish/thesupportateitall.jpeg?tr=w-200 200w,
+                  https://ik.imagekit.io/bcqmunish/thesupportateitall.jpeg?tr=w-400 400w"
+          sizes="(max-width: 600px) 200px, 400px"
+          alt="The Support Ate it All cover"
+          loading="lazy"
+        />
+        <div class="card-text">
+          <div class="title" data-i18n="title2">The Support Ate it All</div>
+          <div class="chapter-info">
+            <div class="chapter" data-i18n="chapter2">Chapter 372</div>
+            <div class="circle ongoing" aria-label="Ongoing status"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="legend">
+    <strong data-i18n="legend">Status Legend:</strong>
+    <div class="legend-item"><div class="circle ongoing" aria-label="Ongoing status"></div> <span data-i18n="ongoing">Ongoing</span></div>
+    <div class="legend-item"><div class="circle finished" aria-label="Finished status"></div> <span data-i18n="finished">Finished</span></div>
+  </div>
+  <section id="about" class="info-section">
+    <h2 data-i18n="about">About</h2>
+    <p data-i18n="aboutText">Scriptoria is a platform for novel enthusiasts to discover exciting stories.</p>
+  </section>
+  <section id="contact" class="info-section">
+    <h2 data-i18n="contact">Contact</h2>
+    <p data-i18n="contactText">Reach out with questions or feedback via email or Twitter.</p>
+    <ul>
+      <li>Email: <a href="mailto:feedback@scriptoria.app">feedback@scriptoria.app</a></li>
+      <li>Instagram: <a href="https://instagram.com/ScriptoriaApp" target="_blank">@ScriptoriaApp</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/company/scriptoriaapp" target="_blank">Scriptoria App</a></li>
+      <li>X: <a href="https://x.com/ScriptoriaApp" target="_blank">@ScriptoriaApp</a></li>
+    </ul>
+  </section>
+  <footer>
+    <p data-i18n="sources">Sources:</p>
+    <ul>
+      <li>Font: <a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins - Google Fonts</a></li>
+      <li>Icons: <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></li>
+      <li>Image Hosting: <a href="https://imagekit.io/" target="_blank">ImageKit</a></li>
+      <li>Novel: <a href="https://indowebnovel.id/" target="_blank">Indowebnovel</a></li>
+    </ul>
+    <p>© <span id="copyright-year"></span> Scriptoria.</p>
+  </footer>
+  <div class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()"><i class="fas fa-moon"></i></div>
+  <script src="script.js"></script>
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        quotes: "“When you arise in the morning, think of what a precious privilege it is to be alive – to breathe, to think, to enjoy, to love.”",
+        recommendations: "Recommendations",
+        title1: "Lord of The Mysteries",
+        chapter1: "Chapter 1430",
+        title2: "The Support Ate it All",
+        chapter2: "Chapter 372",
+        legend: "Status Legend:",
+        ongoing: "Ongoing",
+        finished: "Finished",
+        about: "About",
+        aboutText: "Scriptoria is a website created as an expression of its creator’s love for the world of novels and stories. All the novels here are collected and presented with great enthusiasm, purely out of a hobby and passion for reading and sharing captivating tales. Hopefully, this website can become a favorite place for novel lovers to discover exciting and inspiring stories.",
+        contact: "Contact",
+        contactText: "Questions or feedback? Reach out through:",
+        sources: "Sources",
+      },
+      id: {
+        home: "Beranda",
+        quotes: "“Ketika kamu bangun di pagi hari, pikirkanlah betapa berharganya hak istimewa untuk hidup – untuk bernapas, untuk berpikir, untuk menikmati, untuk mencinta.”",
+        recommendations: "Rekomendasi",
+        title1: "Penguasa Misteri",
+        chapter1: "Bab 1430",
+        title2: "Supporter Melakukan Semuanya",
+        chapter2: "Bab 372",
+        legend: "Legenda Status:",
+        ongoing: "Berlangsung",
+        finished: "Selesai",
+        about: "Tentang",
+        aboutText: "Scriptoria adalah website yang dibuat sebagai wujud kecintaan pembuatnya terhadap dunia novel dan cerita. Semua novel yang ada dikumpulkan dan disajikan dengan penuh semangat, murni karena hobi dan passion dalam membaca serta berbagi kisah menarik. Semoga website ini bisa menjadi tempat favorit bagi para pecinta novel untuk menemukan cerita-cerita seru dan menginspirasi.",
+        contact: "Kontak",
+        contactText: "Pertanyaan atau masukan? Hubungi kami melalui:",
+        sources: "Sumber",
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
